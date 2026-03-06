@@ -27,9 +27,9 @@ export const metadata: Metadata = {
 };
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "หน้าแรก", href: "/" },
+  { label: "เกี่ยวกับเรา", href: "/about" },
+  { label: "ติดต่อเรา", href: "/contact" },
 ];
 
 const sidebarLinks = [
@@ -47,7 +47,7 @@ export default function RootLayout({
     <html lang="en" className={`${sarabun.variable} ${prompt.variable}`}>
       <body style={{ display: "flex", flexDirection: "column" }}>
         <BootstrapClient />
-        <Navbar brandName="My App" brandHref="/" navLinks={navLinks} />
+        <Navbar brandName="SLConcrete" brandHref="/" navLinks={navLinks} />
         <div style={{ display: "flex", flex: 1 }}>
           <Sidebar title="Navigation" navLinks={sidebarLinks} />
           <MainContainer>
