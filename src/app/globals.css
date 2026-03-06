@@ -3,9 +3,45 @@
 :root {
   --sidebar-width: 250px;
   --navbar-height: 56px;
+
+  /* SSK Robotics Overrides */
+  --bs-font-sans-serif: var(--font-sarabun), system-ui, -apple-system, sans-serif;
+  --heading-font: var(--font-prompt), system-ui, -apple-system, sans-serif;
+  --bs-primary: #00a19e;
+  --bs-primary-rgb: 0, 161, 158;
 }
 
-html, body {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: var(--heading-font);
+  color: #193838;
+}
+
+body {
+  color: #3B5353;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: #008785;
+  --bs-btn-hover-border-color: #008785;
+  --bs-btn-active-bg: #007674;
+  --bs-btn-active-border-color: #007674;
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -24,12 +60,14 @@ body {
 
 .sidebar-fixed {
   position: fixed;
-  top: var(--navbar-height);
+  top: 0;
   left: 0;
   width: var(--sidebar-width);
-  height: calc(100vh - var(--navbar-height));
+  height: 100vh;
   overflow-y: auto;
   z-index: 1020;
+  padding-top: var(--navbar-height);
+  /* เพิ่ม padding-top เพื่อไม่ให้เนื้อหาถูกทับโดย navbar (ถ้าต้องการ) */
 }
 
 .navbar-sticky {
@@ -49,6 +87,11 @@ body {
 
 /* Responsive: ซ่อน sidebar บนมือถือ */
 @media (max-width: 991.98px) {
-  .sidebar-fixed { display: none; }
-  .main-content-area { margin-left: 0; }
+  .sidebar-fixed {
+    display: none;
+  }
+
+  .main-content-area {
+    margin-left: 0;
+  }
 }

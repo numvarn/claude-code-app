@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import { Sarabun, Prompt } from "next/font/google";
 import {
   BootstrapClient,
   Navbar,
@@ -7,6 +7,19 @@ import {
   MainContainer,
   Footer,
 } from "@/components/layout";
+import "./globals.css";
+
+const sarabun = Sarabun({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin", "thai"],
+  variable: "--font-sarabun",
+});
+
+const prompt = Prompt({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin", "thai"],
+  variable: "--font-prompt",
+});
 
 export const metadata: Metadata = {
   title: "My App",
@@ -31,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${sarabun.variable} ${prompt.variable}`}>
       <body style={{ display: "flex", flexDirection: "column" }}>
         <BootstrapClient />
         <Navbar brandName="My App" brandHref="/" navLinks={navLinks} />

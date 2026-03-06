@@ -17,7 +17,7 @@ export default function Navbar({
   navLinks,
 }: NavbarProps) {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark navbar-sticky">
+    <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm navbar-sticky">
       <div className="container-fluid">
         <Link className="navbar-brand" href={brandHref}>
           {brandName}
