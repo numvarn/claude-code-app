@@ -1,42 +1,26 @@
 import type { Metadata } from "next";
-import { Sarabun, Prompt } from "next/font/google";
+import { Noto_Sans_Thai, Prompt } from "next/font/google";
 import {
   BootstrapClient,
-  Navbar,
-  Sidebar,
-  MainContainer,
-  Footer,
 } from "@/components/layout";
 import "./globals.css";
 
-const sarabun = Sarabun({
+const notoSansThai = Noto_Sans_Thai({
   weight: ["300", "400", "500", "600", "700"],
-  subsets: ["latin", "thai"],
-  variable: "--font-sarabun",
+  subsets: ["thai", "latin"],
+  variable: "--font-noto-sans-thai",
 });
 
 const prompt = Prompt({
   weight: ["300", "400", "500", "600", "700"],
-  subsets: ["latin", "thai"],
+  subsets: ["thai", "latin"],
   variable: "--font-prompt",
 });
 
 export const metadata: Metadata = {
-  title: "My App",
-  description: "Bootstrap layout with Next.js",
+  title: "SL Concrete - ระดับแนวหน้าในเขตจังหวัดศรีสะเกษ",
+  description: "ผู้ผลิตและจำหน่ายผลิตภัณฑ์คอนกรีตมาตรฐาน ม.อ.ก. รายใหญ่ที่สุดในจังหวัดศรีสะเกษ",
 };
-
-const navLinks = [
-  { label: "หน้าแรก", href: "/" },
-  { label: "เกี่ยวกับเรา", href: "/about" },
-  { label: "ติดต่อเรา", href: "/contact" },
-];
-
-const sidebarLinks = [
-  { label: "Dashboard", href: "/" },
-  { label: "Settings", href: "/settings" },
-  { label: "Profile", href: "/profile" },
-];
 
 export default function RootLayout({
   children,
@@ -44,23 +28,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sarabun.variable} ${prompt.variable}`}>
-      <body style={{ display: "flex", flexDirection: "column" }}>
+    <html lang="th" className={`${notoSansThai.variable} ${prompt.variable}`}>
+      <body>
         <BootstrapClient />
-        <Navbar brandName="SLConcrete" brandHref="/" navLinks={navLinks} />
-        <div style={{ display: "flex", flex: 1 }}>
-          <Sidebar title="Navigation" navLinks={sidebarLinks} />
-          <MainContainer>
-            {children}
-          </MainContainer>
-        </div>
-        <Footer
-          copyrightText="© 2026 My App. All rights reserved."
-          links={[
-            { label: "Privacy", href: "/privacy" },
-            { label: "Terms", href: "/terms" },
-          ]}
-        />
+        <main className="main-wrapper">
+          {children}
+        </main>
       </body>
     </html>
   );
