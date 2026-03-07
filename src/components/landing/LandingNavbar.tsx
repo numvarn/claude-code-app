@@ -100,7 +100,7 @@ export default function LandingNavbar() {
                                 transition: "0.3s",
                             }}
                         >
-                            สอบถามข้อมูล
+                            เข้าสู่ระบบ
                         </a>
                     </div>
 

@@ -13,7 +13,7 @@ export default function HeroSection() {
             <div
                 className="position-absolute top-0 start-0 w-100 h-100"
                 style={{
-                    backgroundImage: "url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2670&auto=format&fit=crop')",
+                    backgroundImage: "url('https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?q=80&w=2670&auto=format&fit=crop')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundColor: "#d9d9d9",
